@@ -1,4 +1,5 @@
-﻿#include <iostream>
+//Zadanie 8 Jakub Maksajda
+#include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
