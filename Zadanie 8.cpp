@@ -1,5 +1,4 @@
-//Zadanie 8 Jakub Maksajda
-#include <iostream>
+﻿#include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
@@ -20,11 +19,11 @@ int main()
     string nazwa_tem; //="temperatura.txt";
 
     cout << "Nazwa pliku z rozszerzeniem (siatka): ";
-    getline(cin, nazwa);
+    cin >> nazwa;
     cout << "Odleglosc miedzy wezlami: ";
     cin >> d;
     cout << "Nazwa pliku z rozszerzeniem (temperatury): ";
-    getline(cin, nazwa);
+    cin >> nazwa_tem;
 
     vector<double> siatka=wczytaj_siatke(nazwa,d);
     vector<double> temp=wczytaj_temperature(nazwa_tem,siatka);
@@ -108,6 +107,7 @@ vector<double> wczytaj_temperature(string name, vector<double> B)
     plik.close();
     if (size(A)<size(B))
     {
+        cout << "\n";
         cout << "Wczytano mniejsza ilosc temeratur niz ilosc wezlow.\n";
         cout << "Pozostale wezly otrzymaja temperature 0.\n";
         while (size(A) < size(B))//wyrównanie ilości elementów tablicy z temp
@@ -117,8 +117,11 @@ vector<double> wczytaj_temperature(string name, vector<double> B)
     }
     else if (size(A) > size(B))
     {
+        cout << "\n";
         cout << "Wczytana ilosc temperatur jest wieksza niz ilosc wezlow\n";
         cout << "Nie wszystkie temperatury zostana uzyte\n";
+        cout << "\n";
+
     }
 
     return A;
